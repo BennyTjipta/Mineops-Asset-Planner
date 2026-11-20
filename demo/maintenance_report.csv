@@ -1,0 +1,13 @@
+id,name,category,last_serviced,service_due,days_remaining,hours_remaining,status
+A001,Haul Truck 01,Mobile Equipment,2026-07-12,2026-10-10,-40,40,OVERDUE
+A002,Conveyor Motor B,Plant,2026-10-21,2026-12-20,31,120,OK
+A003,Crusher Hydraulic Unit,Plant,2026-08-02,2026-10-31,-19,20,OVERDUE
+A004,Ventilation Fan A,Facility,2026-11-01,2026-12-01,12,40,DUE_SOON
+A005,Generator 03,Power,2026-09-10,2026-12-09,20,80,OK
+A006,Service Vehicle 02,Fleet,2026-08-20,2026-12-18,29,50,DUE_SOON
+A007,Pump Station P4,Water,2026-10-05,2027-01-03,45,250,OK
+A008,Dust Collector 1,Plant,2026-06-08,2026-10-06,-44,100,OVERDUE
+A009,Site Server Room UPS,IT Infrastructure,2026-11-10,2027-05-09,171,255,OK
+A010,Drill Rig Delta,Mobile Equipment,2026-10-30,2026-11-29,10,130,DUE_SOON
+A011,Survey Drone One,Survey,2026-09-22,2027-03-21,122,50,DUE_SOON
+A012,Network Switch Plant,IT Infrastructure,2026-11-02,2027-11-02,348,990,OK

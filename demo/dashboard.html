@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MineOps | Asset Maintenance Overview</title>
+  <style>
+    :root { color-scheme: light; --ink:#162236; --sub:#687589; --border:#e6eaf0; --bg:#f3f5f9; }
+    * { box-sizing:border-box; }
+    body { font:15px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif; color:var(--ink); margin:0; background:var(--bg); }
+    header { background:#142237; color:#fff; padding:28px max(24px,calc((100vw - 1150px)/2)); }
+    header .brand { letter-spacing:.14em; text-transform:uppercase; font-weight:750; font-size:12px; color:#9cc8ed; }
+    header h1 { font-size:28px; letter-spacing:-.8px; margin:8px 0 3px; }
+    header p { color:#bac6d6; margin:0; font-size:14px; }
+    main { max-width:1198px; margin:auto; padding:26px 24px 44px; }
+    .meta { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:20px; color:var(--sub); font-size:13px; }
+    .dot { background:#d8dee7; width:4px; height:4px; border-radius:100%; }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .card, .panel { background:white; border:1px solid var(--border); border-radius:15px; box-shadow:0 3px 15px rgba(15,37,68,.035); }
+    .card { padding:20px 22px; } .card-label { font-weight:700; font-size:13px; color:#66758b; }
+    .card-number { font-size:35px; font-weight:780; letter-spacing:-1.4px; margin:7px 0 0; }
+    .card-desc { font-size:12px; color:#8b95a5; margin-top:1px; }
+    .card.over .card-number { color:#b63442; } .card.soon .card-number { color:#b97213; } .card.good .card-number { color:#218265; }
+    .panel { margin-top:16px; padding:22px; }
+    h2 { margin:0 0 5px; font-size:17px; letter-spacing:-.3px; }
+    .sub { color:var(--sub); font-size:13px; margin:0; }
+    .rail { display:flex; overflow:hidden; width:100%; background:#e8edf2; border-radius:50px; height:18px; margin:20px 0 14px; }
+    .rail div { height:100%; } .r1 { background:#c54a57; } .r2 { background:#dda64c; } .r3 { background:#349477; }
+    .legend { display:flex; flex-wrap:wrap; gap:18px; color:#5f6e80; font-size:13px; }
+    .key { display:inline-block; width:9px; height:9px; border-radius:3px; margin-right:6px; }
+    .filters { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin:19px 0 13px; }
+    input, select { border:1px solid #dbe1e8; padding:10px 12px; border-radius:9px; font:inherit; background:white; color:var(--ink); }
+    input { min-width:250px; }
+    table { border-collapse:collapse; width:100%; font-size:13px; }
+    th { padding:12px; text-align:left; background:#f6f8fb; color:#5d6b7f; text-transform:uppercase; letter-spacing:.05em; font-size:11px; }
+    td { border-top:1px solid #edf0f4; padding:14px 12px; }
+    .numeric { text-align:right; font-variant-numeric:tabular-nums; }
+    th.numeric { text-align:right; }
+    .mono { font-variant-numeric:tabular-nums; }
+    .pill { padding:5px 9px; border-radius:6px; font-weight:700; display:inline-block; font-size:12px; white-space:nowrap; }
+    .pill.overdue { background:#fde9eb; color:#a52e40; }
+    .pill.due_soon { background:#fff1d5; color:#8c5c10; }
+    .pill.ok { background:#e0f4eb; color:#176d52; }
+    .table-scroll { overflow-x:auto; }
+    .foot { padding-top:16px; color:#8a96a7; font-size:12px; }
+    @media(max-width:700px) { .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } header h1 { font-size:22px; } input { min-width:100%; } .card { padding:15px; } }
+  </style>
+</head>
+<body>
+  <header><div class="brand">MineOps / Software Engineering Demo</div>
+    <h1>Asset Maintenance Overview</h1>
+    <p>Preventive maintenance tracking with C++ data processing and a Python-generated dashboard</p>
+  </header>
+  <main>
+    <div class="meta"><span>Reference date: <b>2026-11-19</b></span><span class="dot"></span><span>Sample dataset: synthetic</span><span class="dot"></span><span>Offline report</span></div>
+    <section class="cards" aria-label="Key performance indicators">
+      <div class="card"><div class="card-label">Total assets</div><div class="card-number">12</div><div class="card-desc">Monitored in this demo</div></div>
+      <div class="card over"><div class="card-label">Overdue</div><div class="card-number">3</div><div class="card-desc">Past time or usage threshold</div></div>
+      <div class="card soon"><div class="card-label">Due soon</div><div class="card-number">4</div><div class="card-desc">Within 14 days or 50 hours</div></div>
+      <div class="card good"><div class="card-label">On track</div><div class="card-number">5</div><div class="card-desc">Outside warning thresholds</div></div>
+    </section>
+    <section class="panel"><h2>Maintenance workload</h2><p class="sub">Status distribution across the current equipment register</p>
+      <div class="rail" aria-label="Status distribution">
+        <div class="r1" style="width:25.0%" title="Overdue"></div>
+        <div class="r2" style="width:33.3%" title="Due soon"></div>
+        <div class="r3" style="width:41.7%" title="On track"></div>
+      </div>
+      <div class="legend"><span><i class="key r1"></i>Overdue (3)</span><span><i class="key r2"></i>Due soon (4)</span><span><i class="key r3"></i>On track (5)</span></div>
+    </section>
+    <section class="panel">
+      <h2>Asset register</h2><p class="sub">Search equipment names, categories, and IDs, or filter by priority</p>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search assets..." aria-label="Search assets" />
+        <select id="filter" aria-label="Filter by status"><option value="ALL">All statuses</option><option value="OVERDUE">Overdue</option><option value="DUE_SOON">Due soon</option><option value="OK">On track</option></select>
+      </div>
+      <div class="table-scroll"><table>
+        <thead><tr><th>ID</th><th>Equipment</th><th>Category</th><th>Next service date</th><th class="numeric">Days left</th><th class="numeric">Hours left</th><th>Status</th></tr></thead>
+        <tbody id="rows"><tr data-status="OVERDUE"><td class="mono">A008</td><td><strong>Dust Collector 1</strong></td><td>Plant</td><td class="mono">2026-10-06</td><td class="numeric">-44</td><td class="numeric">100</td><td><span class="pill overdue">Overdue</span></td></tr>
+<tr data-status="OVERDUE"><td class="mono">A001</td><td><strong>Haul Truck 01</strong></td><td>Mobile Equipment</td><td class="mono">2026-10-10</td><td class="numeric">-40</td><td class="numeric">40</td><td><span class="pill overdue">Overdue</span></td></tr>
+<tr data-status="OVERDUE"><td class="mono">A003</td><td><strong>Crusher Hydraulic Unit</strong></td><td>Plant</td><td class="mono">2026-10-31</td><td class="numeric">-19</td><td class="numeric">20</td><td><span class="pill overdue">Overdue</span></td></tr>
+<tr data-status="DUE_SOON"><td class="mono">A010</td><td><strong>Drill Rig Delta</strong></td><td>Mobile Equipment</td><td class="mono">2026-11-29</td><td class="numeric">10</td><td class="numeric">130</td><td><span class="pill due_soon">Due soon</span></td></tr>
+<tr data-status="DUE_SOON"><td class="mono">A004</td><td><strong>Ventilation Fan A</strong></td><td>Facility</td><td class="mono">2026-12-01</td><td class="numeric">12</td><td class="numeric">40</td><td><span class="pill due_soon">Due soon</span></td></tr>
+<tr data-status="DUE_SOON"><td class="mono">A006</td><td><strong>Service Vehicle 02</strong></td><td>Fleet</td><td class="mono">2026-12-18</td><td class="numeric">29</td><td class="numeric">50</td><td><span class="pill due_soon">Due soon</span></td></tr>
+<tr data-status="DUE_SOON"><td class="mono">A011</td><td><strong>Survey Drone One</strong></td><td>Survey</td><td class="mono">2027-03-21</td><td class="numeric">122</td><td class="numeric">50</td><td><span class="pill due_soon">Due soon</span></td></tr>
+<tr data-status="OK"><td class="mono">A005</td><td><strong>Generator 03</strong></td><td>Power</td><td class="mono">2026-12-09</td><td class="numeric">20</td><td class="numeric">80</td><td><span class="pill ok">On track</span></td></tr>
+<tr data-status="OK"><td class="mono">A002</td><td><strong>Conveyor Motor B</strong></td><td>Plant</td><td class="mono">2026-12-20</td><td class="numeric">31</td><td class="numeric">120</td><td><span class="pill ok">On track</span></td></tr>
+<tr data-status="OK"><td class="mono">A007</td><td><strong>Pump Station P4</strong></td><td>Water</td><td class="mono">2027-01-03</td><td class="numeric">45</td><td class="numeric">250</td><td><span class="pill ok">On track</span></td></tr>
+<tr data-status="OK"><td class="mono">A009</td><td><strong>Site Server Room UPS</strong></td><td>IT Infrastructure</td><td class="mono">2027-05-09</td><td class="numeric">171</td><td class="numeric">255</td><td><span class="pill ok">On track</span></td></tr>
+<tr data-status="OK"><td class="mono">A012</td><td><strong>Network Switch Plant</strong></td><td>IT Infrastructure</td><td class="mono">2027-11-02</td><td class="numeric">348</td><td class="numeric">990</td><td><span class="pill ok">On track</span></td></tr></tbody>
+      </table></div>
+      <p class="foot" id="display-count">Showing 12 assets</p>
+    </section>
+    <p class="foot">Portfolio prototype only. All sample data is fictional. Not for real equipment maintenance or safety-critical decision-making.</p>
+  </main>
+  <script>
+    const search=document.getElementById('search');
+    const filter=document.getElementById('filter');
+    const rows=[...document.querySelectorAll('#rows tr')];
+    function applyFilters() {
+      const query=search.value.trim().toLowerCase();
+      let shown=0;
+      for (const row of rows) {
+        const visible=(filter.value==='ALL'||row.dataset.status===filter.value) && row.textContent.toLowerCase().includes(query);
+        row.hidden=!visible; if(visible) shown++;
+      }
+      document.getElementById('display-count').textContent=`Showing ${shown} of ${rows.length} assets`;
+    }
+    search.addEventListener('input',applyFilters);
+    filter.addEventListener('change',applyFilters);
+  </script>
+</body></html>

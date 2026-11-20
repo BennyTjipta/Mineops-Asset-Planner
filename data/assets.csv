@@ -1,0 +1,13 @@
+id,name,category,last_serviced,service_interval_days,hours_since_service,max_hours_between_service
+A001,Haul Truck 01,Mobile Equipment,2026-07-12,90,310,350
+A002,Conveyor Motor B,Plant,2026-10-21,60,180,300
+A003,Crusher Hydraulic Unit,Plant,2026-08-02,90,380,400
+A004,Ventilation Fan A,Facility,2026-11-01,30,120,160
+A005,Generator 03,Power,2026-09-10,90,220,300
+A006,Service Vehicle 02,Fleet,2026-08-20,120,450,500
+A007,Pump Station P4,Water,2026-10-05,90,150,400
+A008,Dust Collector 1,Plant,2026-06-08,120,200,300
+A009,Site Server Room UPS,IT Infrastructure,2026-11-10,180,45,300
+A010,Drill Rig Delta,Mobile Equipment,2026-10-30,30,70,200
+A011,Survey Drone One,Survey,2026-09-22,180,70,120
+A012,Network Switch Plant,IT Infrastructure,2026-11-02,365,10,1000
