@@ -70,16 +70,16 @@ Run this after compiling the C++ application. These tests use only Python's stan
 ## Project structure
 ```text
 mineops_asset_planner/
-├── CMakeLists.txt            # C++17 build configuration
-├── src/main.cpp             # Asset modelling, CLI and maintenance logic
-├── dashboard.py             # CSV → self-contained HTML report
 ├── data/assets.csv          # Synthetic sample equipment data
 ├── demo/dashboard.html      # Ready-to-open dashboard
 ├── demo/maintenance_report.csv
+├── src/main.cpp             # Asset modelling, CLI and maintenance logic
 ├── tests/test_cli.py        # CLI integration tests
 ├── tests/test_dashboard.py  # Dashboard output tests
+├── CMakeLists.txt            # C++17 build configuration
 ├── LICENSE
-└── README.md
+├── README.md
+└── dashboard.py             # CSV → self-contained HTML report
 ```
 
 ## Assumptions and limits
